@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="BrandImageManagerApp">
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Image Manager</title>
+    <!--vendor scripts-->
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+    <script src="vendors/ng-file-upload.min.js"></script>
+    <script src="vendors/ng-file-upload-shim.min.js"></script>
+    <script src="/vendors/fabric.js"></script>
+    <script src="/vendors/jquery-3.1.0.min.js"></script>
+    <!--scripts-->
+    <script src="scripts/app.module.js" charset="ut-8"></script>
+    <script src="scripts/app.config.js" charset="ut-8"></script>
+    <script src="scripts/login.controller.js"></script>
+    <script src="scripts/navController.js"></script>
+    <script src="scripts/gallery.controller.js"></script>
+    <script src="scripts/authFactory.js" charset="utf-8"></script>
+    <script src="scripts/access.service.js" charset="utf-8"></script>
+    <script src="scripts/admin.controller.js" charset="utf-8"></script>
+    <script src="scripts/photo.controller.js" charset="utf-8"></script>
+    <script src="scripts/submission.service.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/scripts/orangescript.js"></script>
+    <!--stylesheets-->
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="bootstrap">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/style.css" media="screen">
+
+    <base href="/" />
+  </head>
+  <body>
+
+  <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a alt="Minnesota Historical Society"><img src="http://www.mnhs.org/static/masthead/mnhs_org/img/mnhs-logo-white.svg" class="picLogo"/></a>
+            </div>
+            <div class="row col-xs-9 col-md-9 col-lg-9">
+              <ul class="nav navbar-nav pull-right" ng-controller="NavController as nav">
+              <li ng-show="nav.displayLogout" class="icons"><a href="/admin"><span class="glyphicon glyphicon-user"><br /><span class="icon">Admin</span></span></a></li>
+              <li ng-show="nav.displayLogout" class="icons"><a href="/gallery"><span class="glyphicon glyphicon-home"><br /><span class="icon">Home</span></span></a></li>
+              <li ng-show="nav.displayLogout" class="icons"><a ng-click="nav.logout()" href="/"><span class="glyphicon glyphicon-log-out"><br /><span class="icon">Logout</span></span></a></li>
+              </ul>
+            </div>
+             </div>
+  </nav>
+
+    <ng-view>
+
+    </ng-view>
+  </body>
+
+
+</html>

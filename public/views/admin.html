@@ -1,0 +1,93 @@
+<!--side menu-->
+<div ng-init="admin.getSubmissions()" class="container-fluid col-xs-2 col-md-2 col-lg-2 sideMenu">
+  <div class="sideButtonContainer">
+    <button ng-click="admin.showPendingGallery()" class="btn btn-info btn-lg btn-block sideButton">Pending</button>
+    <button ng-click="admin.showApprovedGallery()" class="btn btn-info btn-lg btn-block sideButton">Approved</button>
+    <button ng-click="admin.showRevisionGallery()" class="btn btn-info btn-lg btn-block sideButton">Revision</button>
+    <button ng-click="admin.showAccess()" class="btn btn-warning btn-lg btn-block sideButton">Access</button>
+  </div>
+</div>
+
+<!--dynamicly created gallary of images that are pennding, approved, or needs rivision-->
+<!--pending-->
+<div ng-show="((admin.pendingGalleryDisplay))" class="container">
+  <div class="row col-xs-4 col-md-4 col-lg-4 text-center">
+    <div>
+      <image>Placeholder</image>
+      <h6>Pending image Title</h6>
+    </div>
+    <span>
+      <button class="btn btn-success">Approve</button>
+      <button class="btn btn-danger">Revise</button>
+      <button ng-click="admin.viewButton()" class="btn btn-info">View</button>
+    </span>
+  </div>
+</div>
+<!--approved-->
+<div ng-show="((admin.approvedGalleryDisplay))" class="container">
+  <div class="row col-xs-4 col-md-4 col-lg-4 text-center">
+    <div>
+      <image>Placeholder</image>
+      <h6>approved image Title</h6>
+    </div>
+    <span>
+      <button class="btn btn-danger">Delete</button>
+      <button ng-click="admin.viewButton()" class="btn btn-info">View</button>
+    </span>
+  </div>
+</div>
+<!--revision-->
+<div ng-show="((admin.revisionGalleryDisplay))" class="container">
+  <div class="row col-xs-4 col-md-4 col-lg-4 text-center">
+    <div>
+      <image>Placeholder</image>
+      <h6>revision image Title</h6>
+    </div>
+    <span>
+      <button class="btn btn-danger">Delete</button>
+      <button ng-click="admin.viewButton()" class="btn btn-info">View</button>
+    </span>
+  </div>
+</div>
+<!--access controls-->
+<div ng-show="((admin.accessControlsDisplay))" class="container text-center">
+  <div class="row col-xs-9 col-md-9 col-lg-9">
+    <!--dynamicly created list of users and there access-->
+    <div ng-repeat="user in admin.allUserAccess" ng-init = "admin.showUserAccess[$index]= false">
+      <button ng-click="admin.truthiness($index)" class="btn btn-primary btn-block btn-lg acordionButton">{{user.email}}<span class="pull-right">&nabla;</span></button>
+      <div class="text-left" ng-show="admin.showUserAccess[$index]" >
+        <label ng-repeat="(key,val) in user" ng-if="$index >= 2" class="checkbox-inline">
+          <input type="checkbox" ng-model="val" ng-change="admin.updateUsersAccesses(user.email, key, val)" ng-checked="{{val}}">
+          {{admin.pretty(key)}}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal-->
+<div id="adminModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span ng-click="admin.closeModal()" class="close">×</span>
+      <h2>Department</h2>
+    </div>
+    <div class="modal-body text-center">
+      <!--image dynamicly created same image as image clicked-->
+      <div>
+        <image>Placeholder</image>
+        <h6>image Title</h6>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <span>
+        <button class="btn btn-success">Approve</button>
+        <button class="btn btn-danger">Revise</button>
+        <button class="btn btn-info">Fullscreen</button>
+      </span>
+    </div>
+  </div>
+
+</div>

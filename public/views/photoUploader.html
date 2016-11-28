@@ -1,0 +1,18 @@
+<h1>Upload a Photo</h1>
+  <div class="upload col-xs-12 col-md-6 col-lg-4">
+    <h3>Upload a new image.</h3>
+    <div class="preview-block">
+      <img ng-show="photo.upload.file!=undefined" ngf-src="photo.upload.file" alt="Image Preview" class="preview" />
+    </div>
+
+    <form enctype="multipart/form-data" name="uploadForm" id="uploadForm">
+      <div class="col-xs-12">
+        <label ng-hide="photo.upload.file!=undefined" id="file-label" for="file-input">Please select a file</label>
+        <input type="file" ng-model="photo.upload.file" ngf-select ngf-max-size="10MB" name="file-input" id="file-input"required>
+      </div>
+        <input class="upload-form-button" type="submit" ng-click="photo.uploadPicture(uploadForm)" value="Upload Image" />
+      </div>
+    </form>
+
+    <button ng-click="photo.findUser()">Log current user</button>
+  </div>

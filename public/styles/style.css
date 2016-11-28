@@ -1,0 +1,217 @@
+/*set to zero*/
+body{
+  padding: 0;
+  margin: 0;
+}
+img {
+  padding-top: 20%;
+}
+
+h1 {
+  margin-top: 0%;
+  padding-top: .4444444444rem;
+
+padding-bottom: .4444444444rem;
+line-height: 1.125;
+font-size: 3.1666666667rem;
+font-weight: 600;
+font-family: "Proxima Nova",proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+display: block;
+text-align: center;
+
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.3333333333rem;
+  font-weight: 600;
+  padding-top: 0;
+  display: block;
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: "Proxima Nova",proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+}
+
+header {
+  background-image: url(/assets/OKF__1.jpg);
+  background-position-x: center;
+  background-position-y: top;
+  font-family: helvetica;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  color: #323e48;
+
+}
+
+.hero_tall {
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.hero {
+  display: flex;
+  color: white;
+  flex-direction: column;
+
+}
+
+.home .hero {
+    text-align: center;
+}
+
+.centeredblock {
+    text-align: center;
+    padding-bottom: 20%;
+}
+
+/*top navbar */
+.navbar {
+  border-bottom: 1px solid #323e48;
+  border-left: 1px solid #323e48;
+  color:#323e48;
+  background-color: #323e48;
+  background-image: none;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+ }
+ /*side admin menu bar*/
+.sideMenu{
+  color: white;
+  background-color: #323e48;
+  height: 87vh;
+}
+.sideButtonContainer{
+  position: relative;
+  top: 40%;
+  transform: translateY(-60%);
+}
+
+.sideButtonContainer2{
+  position: relative;
+}
+.zach{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.col{
+  width: 30%;
+}
+/*remove the rounded corners for the acordion buttons*/
+.acordionButton{
+  border-radius: 0;
+}
+.picLogo {
+  /*height: auto;
+  width: 22%;*/
+  padding: 2%;
+}
+/*modal styles and animation*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #323e48;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #323e48;
+    color: white;
+}
+
+.glyphicon {
+  color: white;
+  font-size: 125%;
+
+}
+
+.glyphicon:hover {
+  color: #eeb111;
+}
+
+.icon {
+  font-family: helvetica;
+}
+
+/* photoUploader.html */
+.preview-block {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid black;
+}
+
+.preview {
+  padding-top: 0;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
